@@ -1,4 +1,4 @@
-import { BtnStyle, MainDiv } from 'components/main/mainStyle';
+import { BtnStyle, InputStyle, MainDiv } from 'components/main/mainStyle';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import {
@@ -57,7 +57,7 @@ const Secondstep = () => {
           <Pthird>
             1,1 How many adults will submit the declaration (including you)?
           </Pthird>
-          <input type="text" />
+          <InputStyle type="number" />
         </div>
       )}
       <IncomeDiv>

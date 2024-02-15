@@ -33,7 +33,7 @@ const main = () => {
       <EmailDiv>
         <label>
           <SpanE>Email</SpanE>
-          <InputStyle type="text" placeholder="Batman@gmail.com" />
+          <InputStyle type="email" placeholder="Batman@gmail.com" />
         </label>
       </EmailDiv>
       <BtnDiv>
