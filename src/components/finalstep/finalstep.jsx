@@ -2,8 +2,31 @@ import { BtnStyle, MainDiv } from 'components/main/mainStyle';
 import { BtnDivTwo } from 'components/secondstep/secondstepStyle';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCheckboxContext } from '../CheckboxContext';
 
-const finalstep = () => {
+const Finalstep = () => {
+  const { selectedCheckboxes } = useCheckboxContext();
+  const maxValue =
+    selectedCheckboxes.length > 0 ? Math.max(...selectedCheckboxes) : 0;
+  let lineTotalMessage = '';
+
+  switch (maxValue) {
+    case 75:
+      lineTotalMessage = 'Tax declaration with zero income';
+      break;
+    case 120:
+      lineTotalMessage = 'Tax declaration for individuals';
+      break;
+    case 210:
+      lineTotalMessage =
+        'Tax declaration for self-employed individuals and those with other types of income';
+      break;
+    case 100:
+      lineTotalMessage = 'Tax declaration for students';
+      break;
+    default:
+      lineTotalMessage = '';
+  }
   return (
     <MainDiv>
       <h2>What is included in the price</h2>
@@ -20,10 +43,10 @@ const finalstep = () => {
           </thead>
           <tbody>
             <tr>
-              <td>Tax declaration</td>
-              <td>Row 1, Column 2</td>
-              <td>Row 1, Column 3</td>
-              <td>Row 1, Column 4</td>
+              <td>{lineTotalMessage}</td>
+              <td>${maxValue}</td>
+              <td>1</td>
+              <td>Total</td>
             </tr>
           </tbody>
         </table>
@@ -49,4 +72,4 @@ const finalstep = () => {
   );
 };
 
-export default finalstep;
+export default Finalstep;

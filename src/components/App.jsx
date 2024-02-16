@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import LinearProgress from '@mui/material/LinearProgress';
-
+import { CheckboxProvider } from './CheckboxContext';
 import Main from './main/main';
 import Secondstep from './secondstep/secondstep';
 import Thirdstep from './thirdstep/thirdstep';
@@ -29,13 +29,15 @@ export const App = () => {
 
   return (
     <>
-      <LinearProgress variant="determinate" value={progress} />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/secondstep" element={<Secondstep />} />
-        <Route path="/thirdstep" element={<Thirdstep />} />
-        <Route path="/finalstep" element={<Finalstep />} />
-      </Routes>
+      <CheckboxProvider>
+        <LinearProgress variant="determinate" value={progress} />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/secondstep" element={<Secondstep />} />
+          <Route path="/thirdstep" element={<Thirdstep />} />
+          <Route path="/finalstep" element={<Finalstep />} />
+        </Routes>
+      </CheckboxProvider>
     </>
   );
 };
