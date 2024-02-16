@@ -36,17 +36,28 @@ const Finalstep = () => {
           <thead>
             <tr>
               <th>Item</th>
-              <th>Price</th>
-              <th>Qty</th>
+              <th>$Price</th>
+
               <th>Line Total</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>{lineTotalMessage}</td>
-              <td>${maxValue}</td>
-              <td>1</td>
+              <td>{maxValue}</td>
               <td>Total</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>Reporting on Foreign Assets</td>
+              <td>75</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td>Online Meeting with an Accountant</td>
+              <td>50</td>
             </tr>
           </tbody>
         </table>
