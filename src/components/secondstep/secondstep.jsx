@@ -20,6 +20,19 @@ const Secondstep = () => {
     }
   };
 
+  // const prices = {
+  //   noIncome: 75,
+  //   employed: 120,
+  //   contractor: 210,
+  //   incomeOutside: 210,
+  //   renting: 210,
+  //   pension: 120,
+  //   investments: 210,
+  //   hobby: 120,
+  //   selfEmployed: 210,
+  //   scholarship: 100,
+  // };
+
   return (
     <MainDiv>
       <div>
@@ -64,49 +77,55 @@ const Secondstep = () => {
         <Pthird>1,2 Select one or more types of income </Pthird>
 
         <label>
-          <StyledCheckbox type="checkbox" /> I have no income (or I only have
-          payments from the government)
+          <StyledCheckbox type="checkbox" value="75" /> I have no income (or I
+          only have payments from the government)
         </label>
 
         <label>
-          <StyledCheckbox type="checkbox" />
+          <StyledCheckbox type="checkbox" value="120" />
           Emloyed
         </label>
 
         <label>
-          <StyledCheckbox type="checkbox" />
+          <StyledCheckbox type="checkbox" value="210" />
           Contractor (the employer does not pay taxes for me)
         </label>
 
         <label>
-          <StyledCheckbox type="checkbox" /> I have income outside of Canada
-          (for example, from Ukraine)
+          <StyledCheckbox type="checkbox" value="210" /> I have income outside
+          of Canada (for example, from Ukraine)
         </label>
 
         <label>
-          <StyledCheckbox type="checkbox" /> I have income from renting a house
+          <StyledCheckbox type="checkbox" value="210" /> I have income from
+          renting a house
         </label>
 
         <label>
-          <StyledCheckbox type="checkbox" /> I receive a pension in Canada
+          <StyledCheckbox type="checkbox" value="120" /> I receive a pension in
+          Canada
         </label>
 
         <label>
-          <StyledCheckbox type="checkbox" /> I have income from investments
-          (deposit, cryptocurrencies, shares, dividends, etc.)
+          <StyledCheckbox type="checkbox" value="210" /> I have income from
+          investments (deposit, cryptocurrencies, shares, dividends, etc.)
         </label>
 
         <label>
-          <StyledCheckbox type="checkbox" />
+          <StyledCheckbox type="checkbox" value="120" />
           Have a hobby or have a small additional income as self-employed (it
           was not the main income and you are ready to pay tax on the entire
           amount, without deducting expenses)
         </label>
 
         <label>
-          <StyledCheckbox type="checkbox" />
+          <StyledCheckbox type="checkbox" value="210" />
           Self-employed (including food delivery, taxi, etc. - it is possible to
           deduct expenses and pay tax only on net income)
+        </label>
+        <label>
+          <StyledCheckbox type="checkbox" value="100" />I am a student and I
+          have a scholarship
         </label>
       </IncomeDiv>
       <PropertyDiv>

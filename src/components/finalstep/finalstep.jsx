@@ -9,7 +9,7 @@ const finalstep = () => {
       <h2>What is included in the price</h2>
 
       <div>
-        <table border="1">
+        <table border="2">
           <thead>
             <tr>
               <th>Item</th>

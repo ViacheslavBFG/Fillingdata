@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const MainDiv = styled.div`
-  margin: 40px 50px;
+  margin: 25px 50px;
 `;
 
 export const NameDiv = styled.div`
