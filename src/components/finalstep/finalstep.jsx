@@ -3,7 +3,7 @@ import { BtnDivTwo } from 'components/secondstep/secondstepStyle';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCheckboxContext } from '../CheckboxContext';
-
+import { AmountP } from './finalstepStyle';
 const Finalstep = () => {
   const { selectedCheckboxes } = useCheckboxContext();
 
@@ -45,34 +45,34 @@ const Finalstep = () => {
           <thead>
             <tr>
               <th>Item</th>
-              <th>$Price</th>
-
-              <th>Line Total</th>
+              <th>Price $</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>{lineTotalMessage}</td>
-              <td>{maxValue}</td>
-              <td>{sum}</td>
+              <td style={{ textAlign: 'center' }}>{maxValue}</td>
             </tr>
           </tbody>
           <tbody>
             {additionalCostProperty === 75 && (
               <tr>
                 <td>Reporting on Foreign Assets</td>
-                <td>{additionalCostProperty}</td>
+                <td style={{ textAlign: 'center' }}>
+                  {additionalCostProperty}
+                </td>
               </tr>
             )}
             {additionalCost === 50 && (
               <tr>
                 <td>Online Meeting with an Accountant</td>
-                <td>{additionalCost}</td>
+                <td style={{ textAlign: 'center' }}>{additionalCost}</td>
               </tr>
             )}
           </tbody>
         </table>
       </div>
+      <AmountP>Total payable : {sum} $</AmountP>
       <p>
         Our price includes the submission of a tax return, an email with
         personal advice for each person (or for the family) and assistance with
