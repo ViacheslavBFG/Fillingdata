@@ -13,8 +13,19 @@ export const PropertyDiv = styled.div`
 
 export const BtnDivTwo = styled.div`
   margin-top: 30px;
-  gap: 1000px;
+
   display: flex;
+  @media only screen and (max-width: 767px) {
+    gap: 100px;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    gap: 500px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    gap: 1000px;
+  }
 `;
 
 export const StyledCheckbox = styled.input`

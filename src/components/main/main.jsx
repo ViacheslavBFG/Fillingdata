@@ -61,6 +61,7 @@ const Main = () => {
           onChange={handleInputChange}
           onBlur={handleInputBlur}
           fullWidth
+          color="warning"
         />
         <TextField
           id="outlined-basic"
@@ -72,6 +73,7 @@ const Main = () => {
           onChange={handleInputChange}
           onBlur={handleInputBlur}
           fullWidth
+          color="warning"
         />
       </NameDiv>
       <EmailDiv>
@@ -85,6 +87,7 @@ const Main = () => {
           onChange={handleInputChange}
           onBlur={handleInputBlur}
           fullWidth
+          color="warning"
         />
       </EmailDiv>
       <BtnDiv>
