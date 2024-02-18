@@ -11,6 +11,7 @@ import {
   LabelStyle,
 } from './secondstepStyle';
 import { Pthird } from 'components/thirdstep/thirdstepStyle';
+import { TextField } from '@mui/material';
 const Secondstep = () => {
   const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
   const {
@@ -76,7 +77,13 @@ const Secondstep = () => {
           <Pthird>
             1,1 How many adults will submit the declaration (including you)?
           </Pthird>
-          <InputStyle type="number" placeholder="Max 5 (in one form)" />
+          <TextField
+            type="number"
+            id="outlined-basic"
+            label="Max 5 (in one form)"
+            variant="outlined"
+            size="small"
+          />
         </div>
       )}
       <IncomeDiv>

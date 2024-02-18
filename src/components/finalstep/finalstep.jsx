@@ -1,4 +1,4 @@
-import { BtnStyle, MainDiv } from 'components/main/mainStyle';
+import { BtnStyle, HeaderTwo, MainDiv } from 'components/main/mainStyle';
 import { BtnDivTwo } from 'components/secondstep/secondstepStyle';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -45,7 +45,7 @@ const Finalstep = () => {
 
   return (
     <MainDiv>
-      <h2>What is included in the price</h2>
+      <HeaderTwo>What is included in the price</HeaderTwo>
 
       <div>
         <Table border={3}>

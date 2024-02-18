@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MainDiv, NameDiv, EmailDiv, BtnDiv, BtnStyle,HeaderTwo } from './mainStyle';
+import {
+  MainDiv,
+  NameDiv,
+  EmailDiv,
+  BtnDiv,
+  BtnStyle,
+  HeaderTwo,
+} from './mainStyle';
 import { Pthird } from 'components/thirdstep/thirdstepStyle';
 import { TextField } from '@mui/material';
 
