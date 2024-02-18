@@ -8,6 +8,7 @@ import {
   BtnDivTwo,
   StyledCheckbox,
   DivChoose,
+  LabelStyle,
 } from './secondstepStyle';
 import { Pthird } from 'components/thirdstep/thirdstepStyle';
 const Secondstep = () => {
@@ -46,7 +47,7 @@ const Secondstep = () => {
           your family?
         </Pthird>
         <DivChoose>
-          <label htmlFor="option1">
+          <LabelStyle htmlFor="option1">
             <StyledCheckbox
               id="option1"
               type="radio"
@@ -55,9 +56,9 @@ const Secondstep = () => {
               onChange={handleOptionChange}
             />
             Yes
-          </label>
+          </LabelStyle>
 
-          <label htmlFor="option2">
+          <LabelStyle htmlFor="option2">
             <StyledCheckbox
               id="option2"
               type="radio"
@@ -66,7 +67,7 @@ const Secondstep = () => {
               onChange={handleOptionChange}
             />
             No
-          </label>
+          </LabelStyle>
         </DivChoose>
       </div>
 
@@ -75,67 +76,67 @@ const Secondstep = () => {
           <Pthird>
             1,1 How many adults will submit the declaration (including you)?
           </Pthird>
-          <InputStyle type="number" />
+          <InputStyle type="number" placeholder="Max 5 (in one form)" />
         </div>
       )}
       <IncomeDiv>
         <Pthird>1,2 Select one or more types of income </Pthird>
 
-        <label>
+        <LabelStyle>
           <StyledCheckbox
             type="checkbox"
             value="75"
             onChange={handleCheckboxChange}
           />{' '}
           I have no income (or I only have payments from the government)
-        </label>
+        </LabelStyle>
 
-        <label>
+        <LabelStyle>
           <StyledCheckbox
             type="checkbox"
             value="120"
             onChange={handleCheckboxChange}
           />
           Employed
-        </label>
+        </LabelStyle>
 
-        <label>
+        <LabelStyle>
           <StyledCheckbox
             type="checkbox"
             value="210"
             onChange={handleCheckboxChange}
           />
           Contractor (the employer does not pay taxes for me)
-        </label>
+        </LabelStyle>
 
-        <label>
+        <LabelStyle>
           <StyledCheckbox
             type="checkbox"
             value="210"
             onChange={handleCheckboxChange}
           />{' '}
           I have income outside of Canada (for example, from Ukraine)
-        </label>
+        </LabelStyle>
 
-        <label>
+        <LabelStyle>
           <StyledCheckbox
             type="checkbox"
             value="210"
             onChange={handleCheckboxChange}
           />{' '}
           I have income from renting a house
-        </label>
+        </LabelStyle>
 
-        <label>
+        <LabelStyle>
           <StyledCheckbox
             type="checkbox"
             value="120"
             onChange={handleCheckboxChange}
           />{' '}
           I receive a pension in Canada
-        </label>
+        </LabelStyle>
 
-        <label>
+        <LabelStyle>
           <StyledCheckbox
             type="checkbox"
             value="210"
@@ -143,9 +144,9 @@ const Secondstep = () => {
           />{' '}
           I have income from investments (deposit, cryptocurrencies, shares,
           dividends, etc.)
-        </label>
+        </LabelStyle>
 
-        <label>
+        <LabelStyle>
           <StyledCheckbox
             type="checkbox"
             value="120"
@@ -154,9 +155,9 @@ const Secondstep = () => {
           Have a hobby or have a small additional income as self-employed (it
           was not the main income and you are ready to pay tax on the entire
           amount, without deducting expenses)
-        </label>
+        </LabelStyle>
 
-        <label>
+        <LabelStyle>
           <StyledCheckbox
             type="checkbox"
             value="210"
@@ -164,22 +165,22 @@ const Secondstep = () => {
           />
           Self-employed (including food delivery, taxi, etc. - it is possible to
           deduct expenses and pay tax only on net income)
-        </label>
-        <label>
+        </LabelStyle>
+        <LabelStyle>
           <StyledCheckbox
             type="checkbox"
             value="100"
             onChange={handleCheckboxChange}
           />
           I am a student and I have a scholarship
-        </label>
+        </LabelStyle>
       </IncomeDiv>
       <PropertyDiv>
         <Pthird>
           1,3 Select the total value of property that you have outside of Canada
           (bank accounts, real estate, cars, shares, securities, etc.)
         </Pthird>
-        <label htmlFor="option0">
+        <LabelStyle htmlFor="option0">
           <StyledCheckbox
             id="option0"
             type="radio"
@@ -189,9 +190,9 @@ const Secondstep = () => {
             onChange={handleOptionChangeProperty}
           />
           From 0 to $100,000
-        </label>
+        </LabelStyle>
 
-        <label htmlFor="option100">
+        <LabelStyle htmlFor="option100">
           <StyledCheckbox
             id="option100"
             type="radio"
@@ -201,9 +202,9 @@ const Secondstep = () => {
             onChange={handleOptionChangeProperty}
           />
           From $100,000 to $250,000
-        </label>
+        </LabelStyle>
 
-        <label htmlFor="option250">
+        <LabelStyle htmlFor="option250">
           <StyledCheckbox
             id="option250"
             type="radio"
@@ -213,7 +214,7 @@ const Secondstep = () => {
             onChange={handleOptionChangeProperty}
           />
           $250,000 or more
-        </label>
+        </LabelStyle>
       </PropertyDiv>
       <BtnDivTwo>
         <Link to={'/'}>

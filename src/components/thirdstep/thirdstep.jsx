@@ -4,6 +4,7 @@ import { FamDiv, Pthird } from './thirdstepStyle';
 import { useCheckboxContext } from '../CheckboxContext';
 import {
   BtnDivTwo,
+  LabelStyle,
   StyledCheckbox,
 } from 'components/secondstep/secondstepStyle';
 import { BtnStyle, MainDiv } from 'components/main/mainStyle';
@@ -24,7 +25,7 @@ const ThirdStep = () => {
           photocopies of payment receipts, a list of all sources of income,
           family information, etc.
         </Pthird>
-        <label>
+        <LabelStyle>
           <StyledCheckbox
             type="radio"
             name="option3"
@@ -36,8 +37,8 @@ const ThirdStep = () => {
           2,1 I will fill out the step-by-step form myself (it will be sent to
           your e-mail after payment, the approximate filling time is 1 hour per
           person if you have all the necessary documents)
-        </label>
-        <label>
+        </LabelStyle>
+        <LabelStyle>
           <StyledCheckbox
             type="radio"
             name="option3"
@@ -48,7 +49,7 @@ const ThirdStep = () => {
           />
           2,2 I need help from an accountant in filling out (this option adds
           $50 to the cost of one declaration)
-        </label>
+        </LabelStyle>
       </FamDiv>
 
      

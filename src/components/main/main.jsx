@@ -11,6 +11,7 @@ import {
   InputStyle,
 } from './mainStyle';
 import { Pthird } from 'components/thirdstep/thirdstepStyle';
+import { TextField } from '@mui/material';
 
 const main = () => {
   return (
@@ -21,20 +22,26 @@ const main = () => {
       </Pthird>
       <hr />
       <NameDiv>
-        <label>
-          <Span>First Name</Span>
-          <InputStyle type="text" placeholder="Bruce " />
-        </label>
-        <label>
-          <Span>Last Name</Span>
-          <InputStyle type="text" placeholder="Wayne" />
-        </label>
+        <TextField
+          id="outlined-basic"
+          label="First name"
+          variant="outlined"
+          size="small"
+        />
+        <TextField
+          id="outlined-basic"
+          label="Last name"
+          variant="outlined"
+          size="small"
+        />
       </NameDiv>
       <EmailDiv>
-        <label>
-          <SpanE>Email</SpanE>
-          <InputStyle type="email" placeholder="Batman@gmail.com" />
-        </label>
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          size="small"
+        />
       </EmailDiv>
       <BtnDiv>
         <Link to={'/secondstep'}>

@@ -25,3 +25,7 @@ export const DivChoose = styled.div`
   flex-direction: column;
   gap: 10px;
 `;
+
+export const LabelStyle = styled.label`
+  cursor: pointer;
+`;

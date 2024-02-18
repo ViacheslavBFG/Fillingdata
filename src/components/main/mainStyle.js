@@ -27,7 +27,7 @@ export const BtnDiv = styled.div`
 export const BtnStyle = styled.button`
   background-color: #00bfff;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
   font-size: 15px;
   cursor: pointer;
   padding: 10px;
