@@ -13,7 +13,7 @@ import { Pthird } from 'components/thirdstep/thirdstepStyle';
 const Secondstep = () => {
   const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
   const {
-    selectedCheckboxes,
+    
     setSelectedCheckboxes,
     selectedOptionProperty,
     setSelectedOptionProperty,
