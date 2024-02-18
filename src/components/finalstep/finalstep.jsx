@@ -4,6 +4,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCheckboxContext } from '../CheckboxContext';
 import { AmountP } from './finalstepStyle';
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+} from '@mui/material';
 const Finalstep = () => {
   const { selectedCheckboxes } = useCheckboxContext();
 
@@ -41,36 +48,36 @@ const Finalstep = () => {
       <h2>What is included in the price</h2>
 
       <div>
-        <table border="2">
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Price $</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{lineTotalMessage}</td>
-              <td style={{ textAlign: 'center' }}>{maxValue}</td>
-            </tr>
-          </tbody>
-          <tbody>
+        <Table border={3}>
+          <TableHead>
+            <TableRow style={{ backgroundColor: '#f2f2f2' }}>
+              <TableCell align="center">
+                <b>Item</b>
+              </TableCell>
+              <TableCell align="center">
+                <b> Price $</b>
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell>{lineTotalMessage}</TableCell>
+              <TableCell align="center">{maxValue}</TableCell>
+            </TableRow>
             {additionalCostProperty === 75 && (
-              <tr>
-                <td>Reporting on Foreign Assets</td>
-                <td style={{ textAlign: 'center' }}>
-                  {additionalCostProperty}
-                </td>
-              </tr>
+              <TableRow>
+                <TableCell>Reporting on Foreign Assets</TableCell>
+                <TableCell align="center">{additionalCostProperty}</TableCell>
+              </TableRow>
             )}
             {additionalCost === 50 && (
-              <tr>
-                <td>Online Meeting with an Accountant</td>
-                <td style={{ textAlign: 'center' }}>{additionalCost}</td>
-              </tr>
+              <TableRow>
+                <TableCell>Online Meeting with an Accountant</TableCell>
+                <TableCell align="center">{additionalCost}</TableCell>
+              </TableRow>
             )}
-          </tbody>
-        </table>
+          </TableBody>
+        </Table>
       </div>
       <AmountP>Total payable : {sum} $</AmountP>
       <p>

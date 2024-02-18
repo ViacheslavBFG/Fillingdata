@@ -13,7 +13,6 @@ import { Pthird } from 'components/thirdstep/thirdstepStyle';
 const Secondstep = () => {
   const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
   const {
-    
     setSelectedCheckboxes,
     selectedOptionProperty,
     setSelectedOptionProperty,
@@ -97,7 +96,7 @@ const Secondstep = () => {
             value="120"
             onChange={handleCheckboxChange}
           />
-          Emloyed
+          Employed
         </label>
 
         <label>
