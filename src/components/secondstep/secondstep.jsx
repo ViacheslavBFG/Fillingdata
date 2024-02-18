@@ -12,7 +12,12 @@ import {
 import { Pthird } from 'components/thirdstep/thirdstepStyle';
 const Secondstep = () => {
   const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
-  const { selectedCheckboxes, setSelectedCheckboxes } = useCheckboxContext();
+  const {
+    selectedCheckboxes,
+    setSelectedCheckboxes,
+    selectedOptionProperty,
+    setSelectedOptionProperty,
+  } = useCheckboxContext();
   const handleCheckboxChange = event => {
     const { value, checked } = event.target;
     if (checked) {
@@ -28,6 +33,10 @@ const Secondstep = () => {
     } else {
       setShowAdditionalInfo(false);
     }
+  };
+
+  const handleOptionChangeProperty = e => {
+    setSelectedOptionProperty(e.target.value);
   };
 
   return (
@@ -171,18 +180,39 @@ const Secondstep = () => {
           1,3 Select the total value of property that you have outside of Canada
           (bank accounts, real estate, cars, shares, securities, etc.)
         </Pthird>
-        <label htmlFor="option3">
-          <StyledCheckbox type="radio" id="option3" name="optionS" />
+        <label htmlFor="option0">
+          <StyledCheckbox
+            id="option0"
+            type="radio"
+            name="optionS"
+            value="option10"
+            checked={selectedOptionProperty === 'option10'}
+            onChange={handleOptionChangeProperty}
+          />
           From 0 to $100,000
         </label>
 
-        <label htmlFor="option4">
-          <StyledCheckbox type="radio" id="option4" name="optionS" />
+        <label htmlFor="option100">
+          <StyledCheckbox
+            id="option100"
+            type="radio"
+            name="optionS"
+            value="option11"
+            checked={selectedOptionProperty === 'option11'}
+            onChange={handleOptionChangeProperty}
+          />
           From $100,000 to $250,000
         </label>
 
-        <label htmlFor="option5">
-          <StyledCheckbox type="radio" id="option5" name="optionS" />
+        <label htmlFor="option250">
+          <StyledCheckbox
+            id="option250"
+            type="radio"
+            name="optionS"
+            value="option12"
+            checked={selectedOptionProperty === 'option12'}
+            onChange={handleOptionChangeProperty}
+          />
           $250,000 or more
         </label>
       </PropertyDiv>

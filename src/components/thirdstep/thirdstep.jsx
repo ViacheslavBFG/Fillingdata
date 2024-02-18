@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FamDiv, Pthird } from './thirdstepStyle';
+import { useCheckboxContext } from '../CheckboxContext';
 import {
   BtnDivTwo,
   StyledCheckbox,
@@ -8,10 +9,10 @@ import {
 import { BtnStyle, MainDiv } from 'components/main/mainStyle';
 
 const ThirdStep = () => {
-  const [selectedOption, setSelectedOption] = useState('');
+  const { selectedOption, setSelectedOption } = useCheckboxContext();
 
-  const handleOptionChange = event => {
-    setSelectedOption(event.target.value);
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
   };
 
   return (
@@ -28,7 +29,9 @@ const ThirdStep = () => {
             type="radio"
             name="option3"
             value="option1"
+            checked={selectedOption === 'option1'}
             onChange={handleOptionChange}
+   
           />
           2,1 I will fill out the step-by-step form myself (it will be sent to
           your e-mail after payment, the approximate filling time is 1 hour per
@@ -39,15 +42,16 @@ const ThirdStep = () => {
             type="radio"
             name="option3"
             value="option2"
+            checked={selectedOption === 'option2'}
             onChange={handleOptionChange}
+   
           />
           2,2 I need help from an accountant in filling out (this option adds
           $50 to the cost of one declaration)
         </label>
       </FamDiv>
 
-      {selectedOption === 'option2' && <p>Online meeting with an accountant</p>}
-
+     
       <BtnDivTwo>
         <Link to={'/secondstep'}>
           <BtnStyle>PREVIOUS</BtnStyle>

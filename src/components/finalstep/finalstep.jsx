@@ -6,6 +6,7 @@ import { useCheckboxContext } from '../CheckboxContext';
 
 const Finalstep = () => {
   const { selectedCheckboxes } = useCheckboxContext();
+
   const maxValue =
     selectedCheckboxes.length > 0 ? Math.max(...selectedCheckboxes) : 0;
   let lineTotalMessage = '';
@@ -27,6 +28,14 @@ const Finalstep = () => {
     default:
       lineTotalMessage = '';
   }
+
+  const { selectedOption } = useCheckboxContext();
+  const additionalCost = selectedOption === 'option2' ? 50 : 0;
+
+  const { selectedOptionProperty } = useCheckboxContext();
+  const additionalCostProperty = selectedOptionProperty === 'option12' ? 75 : 0;
+  const sum = maxValue + additionalCostProperty + additionalCost;
+
   return (
     <MainDiv>
       <h2>What is included in the price</h2>
@@ -45,20 +54,22 @@ const Finalstep = () => {
             <tr>
               <td>{lineTotalMessage}</td>
               <td>{maxValue}</td>
-              <td>Total</td>
+              <td>{sum}</td>
             </tr>
           </tbody>
           <tbody>
-            <tr>
-              <td>Reporting on Foreign Assets</td>
-              <td>75</td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td>Online Meeting with an Accountant</td>
-              <td>50</td>
-            </tr>
+            {additionalCostProperty === 75 && (
+              <tr>
+                <td>Reporting on Foreign Assets</td>
+                <td>{additionalCostProperty}</td>
+              </tr>
+            )}
+            {additionalCost === 50 && (
+              <tr>
+                <td>Online Meeting with an Accountant</td>
+                <td>{additionalCost}</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
