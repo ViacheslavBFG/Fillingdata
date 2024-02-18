@@ -1,4 +1,4 @@
-import { BtnStyle, InputStyle, MainDiv } from 'components/main/mainStyle';
+import { BtnStyle, MainDiv } from 'components/main/mainStyle';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useCheckboxContext } from '../CheckboxContext';
