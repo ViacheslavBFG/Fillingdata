@@ -16,7 +16,7 @@ export const BtnDivTwo = styled.div`
 
   display: flex;
   @media only screen and (max-width: 767px) {
-    gap: 100px;
+    gap: 60px;
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -24,7 +24,7 @@ export const BtnDivTwo = styled.div`
   }
 
   @media only screen and (min-width: 1024px) {
-    gap: 1000px;
+    gap: 800px;
   }
 `;
 
