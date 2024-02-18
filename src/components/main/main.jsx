@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MainDiv, NameDiv, EmailDiv, BtnDiv, BtnStyle } from './mainStyle';
+import { MainDiv, NameDiv, EmailDiv, BtnDiv, BtnStyle,HeaderTwo } from './mainStyle';
 import { Pthird } from 'components/thirdstep/thirdstepStyle';
 import { TextField } from '@mui/material';
 
@@ -38,7 +38,7 @@ const Main = () => {
 
   return (
     <MainDiv>
-      <h2>Calculation Form</h2>
+      <HeaderTwo>Calculation Form</HeaderTwo>
       <Pthird>
         Please enter your personal information for the calculation of the cost
       </Pthird>

@@ -4,6 +4,10 @@ export const MainDiv = styled.div`
   margin: 25px 50px;
 `;
 
+export const HeaderTwo = styled.h2`
+  font-size: 40px;
+`;
+
 export const NameDiv = styled.div`
   display: flex;
   gap: 20px;
@@ -25,7 +29,9 @@ export const BtnDiv = styled.div`
 `;
 
 export const BtnStyle = styled.button`
-  background-color: #00bfff;
+  color: white;
+  font-weight: bold;
+  background-color: #d74439;
   border: none;
   border-radius: 5px;
   font-size: 15px;

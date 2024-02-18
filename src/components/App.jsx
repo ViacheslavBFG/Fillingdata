@@ -30,7 +30,15 @@ export const App = () => {
   return (
     <>
       <CheckboxProvider>
-        <LinearProgress variant="determinate" value={progress} />
+        <LinearProgress
+          variant="determinate"
+          value={progress}
+          sx={{
+            '& .MuiLinearProgress-bar': {
+              backgroundColor: '#D74439 ', 
+            },
+          }}
+        />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/secondstep" element={<Secondstep />} />
