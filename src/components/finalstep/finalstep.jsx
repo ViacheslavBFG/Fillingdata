@@ -94,7 +94,7 @@ const Finalstep = () => {
           <BtnStyle>PREVIOUS</BtnStyle>
         </Link>
         <Link to={'/finalstep'}>
-          <BtnStyle>FINISH</BtnStyle>
+          <BtnStyle>PLACE ORDER</BtnStyle>
         </Link>
       </BtnDivTwo>
     </MainDiv>

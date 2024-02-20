@@ -159,9 +159,9 @@ const Secondstep = () => {
             value="120"
             onChange={handleCheckboxChange}
           />
-          Have a hobby or have a small additional income as self-employed (it
-          was not the main income and you are ready to pay tax on the entire
-          amount, without deducting expenses)
+          Have a hobby or have a small additional income as self-employed (it s
+          not the main income and you are ready to pay tax on the entire amount,
+          without deducting expenses)
         </LabelStyle>
 
         <LabelStyle>

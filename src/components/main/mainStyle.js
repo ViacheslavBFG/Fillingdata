@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const MainDiv = styled.div`
-  margin: 25px 50px;
+  margin: 25px 100px;
 `;
 
 export const HeaderTwo = styled.h2`
@@ -42,10 +42,15 @@ export const BtnStyle = styled.button`
 
   &:hover {
     transform: scale(1.025);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Трехмерная тень */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
   }
 `;
 export const InputStyle = styled.input`
   border-radius: 10px;
   padding: 7px;
+`;
+
+export const ErrorText = styled.div`
+  color: red;
+  font-size: 12px;
 `;
