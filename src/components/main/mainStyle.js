@@ -43,6 +43,7 @@ export const BtnStyle = styled.button`
   &:hover {
     transform: scale(1.025);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+    
   }
 `;
 export const InputStyle = styled.input`

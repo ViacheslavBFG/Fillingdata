@@ -85,7 +85,19 @@ const Main = () => {
               <Link to={'/secondstep'}>
                 <BtnStyle
                   type="submit"
-                  disabled={formik.isSubmitting || !formik.isValid}
+                  disabled={
+                    formik.isSubmitting ||
+                    !formik.isValid ||
+                    !formik.dirty 
+                  }
+                  style={{
+                    opacity:
+                      formik.isValid && formik.dirty ? 1 : 0.5, 
+                    cursor:
+                      formik.isValid && formik.dirty
+                        ? 'pointer'
+                        : 'not-allowed', 
+                  }}
                 >
                   NEXT
                 </BtnStyle>
