@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FamDiv, Pthird } from './thirdstepStyle';
 import { useCheckboxContext } from '../CheckboxContext';
@@ -11,8 +11,17 @@ import { BtnStyle, MainDiv } from 'components/main/mainStyle';
 
 const ThirdStep = () => {
   const { selectedOption, setSelectedOption } = useCheckboxContext();
+  const [selectedOptionRadio, setSelectedOptionRadio] = useState('');
 
-  const handleOptionChange = (e) => {
+  const handleMix = event => {
+    handleRadio(event);
+    handleOptionChange(event);
+  };
+  const handleRadio = e => {
+    setSelectedOptionRadio(e.target.value);
+  };
+
+  const handleOptionChange = e => {
     setSelectedOption(e.target.value);
   };
 
@@ -31,8 +40,7 @@ const ThirdStep = () => {
             name="option3"
             value="option1"
             checked={selectedOption === 'option1'}
-            onChange={handleOptionChange}
-   
+            onChange={handleMix}
           />
           2,1 I will fill out the step-by-step form myself (it will be sent to
           your e-mail after payment, the approximate filling time is 1 hour per
@@ -44,21 +52,19 @@ const ThirdStep = () => {
             name="option3"
             value="option2"
             checked={selectedOption === 'option2'}
-            onChange={handleOptionChange}
-   
+            onChange={handleMix}
           />
           2,2 I need help from an accountant in filling out (this option adds
           $50 to the cost of one declaration)
         </LabelStyle>
       </FamDiv>
 
-     
       <BtnDivTwo>
         <Link to={'/secondstep'}>
           <BtnStyle>PREVIOUS</BtnStyle>
         </Link>
         <Link to={'/finalstep'}>
-          <BtnStyle>NEXT</BtnStyle>
+          <BtnStyle disabled={!selectedOptionRadio}>NEXT</BtnStyle>
         </Link>
       </BtnDivTwo>
     </MainDiv>

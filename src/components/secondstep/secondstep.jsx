@@ -13,6 +13,10 @@ import {
 import { Pthird } from 'components/thirdstep/thirdstepStyle';
 import { TextField } from '@mui/material';
 const Secondstep = () => {
+  //
+  const [selectedOption, setSelectedOption] = useState('');
+
+  //
   const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
   const {
     setSelectedCheckboxes,
@@ -28,12 +32,22 @@ const Secondstep = () => {
     }
   };
 
+  const comboChangeHandler = event => {
+    handleOptionChange(event);
+    handleRadioChange(event);
+    handleOptionChangeProperty(event);
+  };
+
   const handleOptionChange = event => {
     if (event.target.value === 'option1') {
       setShowAdditionalInfo(true);
     } else {
       setShowAdditionalInfo(false);
     }
+  };
+
+  const handleRadioChange = event => {
+    setSelectedOption(event.target.value);
   };
 
   const handleOptionChangeProperty = e => {
@@ -54,7 +68,7 @@ const Secondstep = () => {
               type="radio"
               name="options"
               value="option1"
-              onChange={handleOptionChange}
+              onChange={comboChangeHandler}
             />
             Yes
           </LabelStyle>
@@ -65,7 +79,7 @@ const Secondstep = () => {
               type="radio"
               name="options"
               value="option2"
-              onChange={handleOptionChange}
+              onChange={comboChangeHandler}
             />
             No
           </LabelStyle>
@@ -194,7 +208,7 @@ const Secondstep = () => {
             name="optionS"
             value="option10"
             checked={selectedOptionProperty === 'option10'}
-            onChange={handleOptionChangeProperty}
+            onChange={comboChangeHandler}
           />
           From 0 to $100,000
         </LabelStyle>
@@ -206,7 +220,7 @@ const Secondstep = () => {
             name="optionS"
             value="option11"
             checked={selectedOptionProperty === 'option11'}
-            onChange={handleOptionChangeProperty}
+            onChange={comboChangeHandler}
           />
           From $100,000 to $250,000
         </LabelStyle>
@@ -218,7 +232,7 @@ const Secondstep = () => {
             name="optionS"
             value="option12"
             checked={selectedOptionProperty === 'option12'}
-            onChange={handleOptionChangeProperty}
+            onChange={comboChangeHandler}
           />
           $250,000 or more
         </LabelStyle>
@@ -228,7 +242,7 @@ const Secondstep = () => {
           <BtnStyle>PREVIOUS</BtnStyle>
         </Link>
         <Link to={'/thirdstep'}>
-          <BtnStyle>NEXT</BtnStyle>
+          <BtnStyle disabled={!selectedOption}>NEXT</BtnStyle>
         </Link>
       </BtnDivTwo>
     </MainDiv>
