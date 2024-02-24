@@ -8,6 +8,8 @@ import Thirdstep from './thirdstep/thirdstep';
 import Finalstep from './finalstep/finalstep';
 import LanguageSwitcher from './languageSwitcher/languageSwitcher';
 import '18n';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
 
 export const App = () => {
   const [progress, setProgress] = useState(0);
@@ -42,12 +44,16 @@ export const App = () => {
           }}
         />
         <LanguageSwitcher />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/secondstep" element={<Secondstep />} />
-          <Route path="/thirdstep" element={<Thirdstep />} />
-          <Route path="/finalstep" element={<Finalstep />} />
-        </Routes>
+        <SimpleBar
+          style={{ maxHeight: 'calc(100vh - 4rem)', overflowX: 'hidden' }}
+        >
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/secondstep" element={<Secondstep />} />
+            <Route path="/thirdstep" element={<Thirdstep />} />
+            <Route path="/finalstep" element={<Finalstep />} />
+          </Routes>
+        </SimpleBar>
       </CheckboxProvider>
     </>
   );
