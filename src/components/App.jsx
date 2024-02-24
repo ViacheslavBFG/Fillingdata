@@ -6,6 +6,8 @@ import Main from './main/main';
 import Secondstep from './secondstep/secondstep';
 import Thirdstep from './thirdstep/thirdstep';
 import Finalstep from './finalstep/finalstep';
+import LanguageSwitcher from './languageSwitcher/languageSwitcher';
+import '18n';
 
 export const App = () => {
   const [progress, setProgress] = useState(0);
@@ -35,10 +37,11 @@ export const App = () => {
           value={progress}
           sx={{
             '& .MuiLinearProgress-bar': {
-              backgroundColor: '#D74439 ', 
+              backgroundColor: '#D74439 ',
             },
           }}
         />
+        <LanguageSwitcher />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/secondstep" element={<Secondstep />} />

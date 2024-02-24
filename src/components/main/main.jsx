@@ -13,23 +13,23 @@ import {
 } from './mainStyle';
 import { Pthird } from 'components/thirdstep/thirdstepStyle';
 import { TextField } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const Main = () => {
+  const { t } = useTranslation();
   return (
     <MainDiv>
-      <HeaderTwo>Calculation Form</HeaderTwo>
-      <Pthird>
-        Please enter your personal information for the calculation of the cost
-      </Pthird>
+      <HeaderTwo>{t('main.header')}</HeaderTwo>
+      <Pthird>{t('main.inf')}</Pthird>
       <hr />
       <Formik
         initialValues={{ firstName: '', lastName: '', email: '' }}
         validationSchema={Yup.object({
-          firstName: Yup.string().required('First name is required'),
-          lastName: Yup.string().required('Last name is required'),
+          firstName: Yup.string().required(t('main.error.firstName.required')),
+          lastName: Yup.string().required(t('main.error.lastName.required')),
           email: Yup.string()
-            .email('Invalid email address')
-            .required('Email is required'),
+            .email(t('main.error.email.invalid'))
+            .required(t('main.error.email.required')),
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
@@ -44,7 +44,7 @@ const Main = () => {
               <Field
                 id="firstName"
                 name="firstName"
-                label="First name"
+                label={t('main.placeholder.firstName')}
                 as={TextField}
                 variant="outlined"
                 size="small"
@@ -57,7 +57,7 @@ const Main = () => {
               <Field
                 id="lastName"
                 name="lastName"
-                label="Last name"
+                label={t('main.placeholder.lastName')}
                 as={TextField}
                 variant="outlined"
                 size="small"
@@ -72,7 +72,7 @@ const Main = () => {
               <Field
                 id="email"
                 name="email"
-                label="Email"
+                label={t('main.placeholder.email')}
                 as={TextField}
                 variant="outlined"
                 size="small"
@@ -86,20 +86,17 @@ const Main = () => {
                 <BtnStyle
                   type="submit"
                   disabled={
-                    formik.isSubmitting ||
-                    !formik.isValid ||
-                    !formik.dirty 
+                    formik.isSubmitting || !formik.isValid || !formik.dirty
                   }
                   style={{
-                    opacity:
-                      formik.isValid && formik.dirty ? 1 : 0.5, 
+                    opacity: formik.isValid && formik.dirty ? 1 : 0.5,
                     cursor:
                       formik.isValid && formik.dirty
                         ? 'pointer'
-                        : 'not-allowed', 
+                        : 'not-allowed',
                   }}
                 >
-                  NEXT
+                  {t('main.button.next')}
                 </BtnStyle>
               </Link>
             </BtnDiv>

@@ -11,7 +11,9 @@ import {
   TableRow,
   TableCell,
 } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 const Finalstep = () => {
+  const { t } = useTranslation();
   const { selectedCheckboxes } = useCheckboxContext();
 
   const maxValue =
@@ -20,17 +22,16 @@ const Finalstep = () => {
 
   switch (maxValue) {
     case 75:
-      lineTotalMessage = 'Tax declaration with zero income';
+      lineTotalMessage = t('taxDeclarationZeroIncome');
       break;
     case 120:
-      lineTotalMessage = 'Tax declaration for individuals';
+      lineTotalMessage = t('taxDeclarationIndividuals');
       break;
     case 210:
-      lineTotalMessage =
-        'Tax declaration for self-employed individuals and those with other types of income';
+      lineTotalMessage = t('taxDeclarationSelfEmployed');
       break;
     case 100:
-      lineTotalMessage = 'Tax declaration for students';
+      lineTotalMessage = t('taxDeclarationStudents');
       break;
     default:
       lineTotalMessage = '';
@@ -45,17 +46,17 @@ const Finalstep = () => {
 
   return (
     <MainDiv>
-      <HeaderTwo>What is included in the price</HeaderTwo>
+      <HeaderTwo>{t('header')}</HeaderTwo>
 
       <div>
         <Table border={3}>
           <TableHead>
             <TableRow style={{ backgroundColor: '#f2f2f2' }}>
               <TableCell align="center">
-                <b>Item</b>
+                <b>{t('item')}</b>
               </TableCell>
               <TableCell align="center">
-                <b> Price $</b>
+                <b>{t('price')}</b>
               </TableCell>
             </TableRow>
           </TableHead>
@@ -66,35 +67,30 @@ const Finalstep = () => {
             </TableRow>
             {additionalCostProperty === 75 && (
               <TableRow>
-                <TableCell>Reporting on Foreign Assets</TableCell>
+                <TableCell>{t('reportingForeignAssets')}</TableCell>
                 <TableCell align="center">{additionalCostProperty}</TableCell>
               </TableRow>
             )}
             {additionalCost === 50 && (
               <TableRow>
-                <TableCell>Online Meeting with an Accountant</TableCell>
+                <TableCell>{t('onlineMeetingAccountant')}</TableCell>
                 <TableCell align="center">{additionalCost}</TableCell>
               </TableRow>
             )}
           </TableBody>
         </Table>
       </div>
-      <AmountP>Total payable : {sum} $</AmountP>
-      <p>
-        Our price includes the submission of a tax return, an email with
-        personal advice for each person (or for the family) and assistance with
-        an audit from the tax office, if one is carried out on the return
-        submitted by us, for 10 years. We also guarantee to submit all
-        declarations by the deadline, otherwise we will pay all penalties for
-        late submission of declarations caused by our fault.
-      </p>
+      <AmountP>
+        {t('totalPayable')} : {sum} $
+      </AmountP>
+      <p>{t('priceIncludes')}</p>
 
       <BtnDivTwo>
         <Link to={'/thirdstep'}>
-          <BtnStyle>PREVIOUS</BtnStyle>
+          <BtnStyle>{t('secondstep.previous')}</BtnStyle>
         </Link>
         <Link to={'/finalstep'}>
-          <BtnStyle>PLACE ORDER</BtnStyle>
+          <BtnStyle>{t('placeOrder')}</BtnStyle>
         </Link>
       </BtnDivTwo>
     </MainDiv>

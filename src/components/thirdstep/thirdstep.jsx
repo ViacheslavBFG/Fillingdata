@@ -8,6 +8,7 @@ import {
   StyledCheckbox,
 } from 'components/secondstep/secondstepStyle';
 import { BtnStyle, MainDiv } from 'components/main/mainStyle';
+import { useTranslation } from 'react-i18next';
 
 const ThirdStep = () => {
   const { selectedOption, setSelectedOption } = useCheckboxContext();
@@ -25,15 +26,12 @@ const ThirdStep = () => {
     setSelectedOption(e.target.value);
   };
 
+  const { t } = useTranslation();
+
   return (
     <MainDiv>
       <FamDiv>
-        <Pthird>
-          2. In order for us to fill out your tax return, we need to receive
-          information from you, including: forms from the place of employment,
-          photocopies of payment receipts, a list of all sources of income,
-          family information, etc.
-        </Pthird>
+        <Pthird>{t('information')}</Pthird>
         <LabelStyle>
           <StyledCheckbox
             type="radio"
@@ -42,9 +40,7 @@ const ThirdStep = () => {
             checked={selectedOption === 'option1'}
             onChange={handleMix}
           />
-          2,1 I will fill out the step-by-step form myself (it will be sent to
-          your e-mail after payment, the approximate filling time is 1 hour per
-          person if you have all the necessary documents)
+          {t('stepByStep')}
         </LabelStyle>
         <LabelStyle>
           <StyledCheckbox
@@ -54,17 +50,18 @@ const ThirdStep = () => {
             checked={selectedOption === 'option2'}
             onChange={handleMix}
           />
-          2,2 I need help from an accountant in filling out (this option adds
-          $50 to the cost of one declaration)
+          {t('accountantHelp')}
         </LabelStyle>
       </FamDiv>
 
       <BtnDivTwo>
         <Link to={'/secondstep'}>
-          <BtnStyle>PREVIOUS</BtnStyle>
+          <BtnStyle>{t('secondstep.previous')}</BtnStyle>
         </Link>
         <Link to={'/finalstep'}>
-          <BtnStyle disabled={!selectedOptionRadio}>NEXT</BtnStyle>
+          <BtnStyle disabled={!selectedOptionRadio}>
+            {t('main.button.next')}
+          </BtnStyle>
         </Link>
       </BtnDivTwo>
     </MainDiv>

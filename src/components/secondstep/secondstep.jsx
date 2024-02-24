@@ -12,6 +12,7 @@ import {
 } from './secondstepStyle';
 import { Pthird } from 'components/thirdstep/thirdstepStyle';
 import { TextField } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 const Secondstep = () => {
   //
   const [selectedOption, setSelectedOption] = useState('');
@@ -53,14 +54,11 @@ const Secondstep = () => {
   const handleOptionChangeProperty = e => {
     setSelectedOptionProperty(e.target.value);
   };
-
+  const { t } = useTranslation();
   return (
     <MainDiv>
       <div>
-        <Pthird>
-          1. Do you want to submit a declaration together with other members of
-          your family?
-        </Pthird>
+        <Pthird>{t('secondstep.question1')}</Pthird>
         <DivChoose>
           <LabelStyle htmlFor="option1">
             <StyledCheckbox
@@ -70,7 +68,7 @@ const Secondstep = () => {
               value="option1"
               onChange={comboChangeHandler}
             />
-            Yes
+            {t('secondstep.yes')}
           </LabelStyle>
 
           <LabelStyle htmlFor="option2">
@@ -81,27 +79,25 @@ const Secondstep = () => {
               value="option2"
               onChange={comboChangeHandler}
             />
-            No
+            {t('secondstep.no')}
           </LabelStyle>
         </DivChoose>
       </div>
 
       {showAdditionalInfo && (
         <div>
-          <Pthird>
-            1,1 How many adults will submit the declaration (including you)?
-          </Pthird>
+          <Pthird>{t('secondstep.question2')}</Pthird>
           <TextField
             type="number"
             id="outlined-basic"
-            label="Max 5 (in one form)"
+            label={t('secondstep.maxAdults')}
             variant="outlined"
             size="small"
           />
         </div>
       )}
       <IncomeDiv>
-        <Pthird>1,2 Select one or more types of income </Pthird>
+        <Pthird>{t('secondstep.question3')}</Pthird>
 
         <LabelStyle>
           <StyledCheckbox
@@ -109,7 +105,7 @@ const Secondstep = () => {
             value="75"
             onChange={handleCheckboxChange}
           />{' '}
-          I have no income (or I only have payments from the government)
+          {t('secondstep.noIncome')}
         </LabelStyle>
 
         <LabelStyle>
@@ -118,7 +114,7 @@ const Secondstep = () => {
             value="120"
             onChange={handleCheckboxChange}
           />
-          Employed
+          {t('secondstep.employed')}
         </LabelStyle>
 
         <LabelStyle>
@@ -127,7 +123,7 @@ const Secondstep = () => {
             value="210"
             onChange={handleCheckboxChange}
           />
-          Contractor (the employer does not pay taxes for me)
+          {t('secondstep.contractor')}
         </LabelStyle>
 
         <LabelStyle>
@@ -136,7 +132,7 @@ const Secondstep = () => {
             value="210"
             onChange={handleCheckboxChange}
           />{' '}
-          I have income outside of Canada (for example, from Ukraine)
+          {t('secondstep.outsideIncome')}
         </LabelStyle>
 
         <LabelStyle>
@@ -145,7 +141,7 @@ const Secondstep = () => {
             value="210"
             onChange={handleCheckboxChange}
           />{' '}
-          I have income from renting a house
+          {t('secondstep.rentalIncome')}
         </LabelStyle>
 
         <LabelStyle>
@@ -154,7 +150,7 @@ const Secondstep = () => {
             value="120"
             onChange={handleCheckboxChange}
           />{' '}
-          I receive a pension in Canada
+          {t('secondstep.pension')}
         </LabelStyle>
 
         <LabelStyle>
@@ -163,8 +159,7 @@ const Secondstep = () => {
             value="210"
             onChange={handleCheckboxChange}
           />{' '}
-          I have income from investments (deposit, cryptocurrencies, shares,
-          dividends, etc.)
+          {t('secondstep.investmentIncome')}
         </LabelStyle>
 
         <LabelStyle>
@@ -173,9 +168,7 @@ const Secondstep = () => {
             value="120"
             onChange={handleCheckboxChange}
           />
-          Have a hobby or have a small additional income as self-employed (it s
-          not the main income and you are ready to pay tax on the entire amount,
-          without deducting expenses)
+          {t('secondstep.hobbyIncome')}
         </LabelStyle>
 
         <LabelStyle>
@@ -184,8 +177,7 @@ const Secondstep = () => {
             value="210"
             onChange={handleCheckboxChange}
           />
-          Self-employed (including food delivery, taxi, etc. - it is possible to
-          deduct expenses and pay tax only on net income)
+          {t('secondstep.selfEmployed')}
         </LabelStyle>
         <LabelStyle>
           <StyledCheckbox
@@ -193,14 +185,11 @@ const Secondstep = () => {
             value="100"
             onChange={handleCheckboxChange}
           />
-          I am a student and I have a scholarship
+          {t('secondstep.studentScholarship')}
         </LabelStyle>
       </IncomeDiv>
       <PropertyDiv>
-        <Pthird>
-          1,3 Select the total value of property that you have outside of Canada
-          (bank accounts, real estate, cars, shares, securities, etc.)
-        </Pthird>
+        <Pthird>{t('secondstep.question4')}</Pthird>
         <LabelStyle htmlFor="option0">
           <StyledCheckbox
             id="option0"
@@ -210,7 +199,7 @@ const Secondstep = () => {
             checked={selectedOptionProperty === 'option10'}
             onChange={comboChangeHandler}
           />
-          From 0 to $100,000
+          {t('secondstep.propertyOption1')}
         </LabelStyle>
 
         <LabelStyle htmlFor="option100">
@@ -222,7 +211,7 @@ const Secondstep = () => {
             checked={selectedOptionProperty === 'option11'}
             onChange={comboChangeHandler}
           />
-          From $100,000 to $250,000
+          {t('secondstep.propertyOption2')}
         </LabelStyle>
 
         <LabelStyle htmlFor="option250">
@@ -234,15 +223,17 @@ const Secondstep = () => {
             checked={selectedOptionProperty === 'option12'}
             onChange={comboChangeHandler}
           />
-          $250,000 or more
+          {t('secondstep.propertyOption3')}
         </LabelStyle>
       </PropertyDiv>
       <BtnDivTwo>
         <Link to={'/'}>
-          <BtnStyle>PREVIOUS</BtnStyle>
+          <BtnStyle>{t('secondstep.previous')}</BtnStyle>
         </Link>
         <Link to={'/thirdstep'}>
-          <BtnStyle disabled={!selectedOption}>NEXT</BtnStyle>
+          <BtnStyle disabled={!selectedOption}>
+            {t('main.button.next')}
+          </BtnStyle>
         </Link>
       </BtnDivTwo>
     </MainDiv>
